@@ -1,14 +1,16 @@
 #!/bin/sh
 
-
 test_ex00()
 {
-	EX_NAME="ft_putchar"
+	# Setup
+	local EX_NAME="ft_putchar"
+	local EX_PATH="c00/ex00"
 
 	print_start_test $EX_NAME
 
-	gcc $CURRENT_DIR/src/c00/ex00/main.c $REPO_PATH/c00/ex00/ft_putchar.c
+	compile_tests $CURRENT_DIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
 
+	# Test
 	local VALID_RES="!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~"
 
 	local USER_OUTPUT=$(./a.out)
@@ -18,6 +20,8 @@ test_ex00()
 	else
 		print_success $EX_NAME
 	fi
+
+	clean_test
 }
 
 test_c00()
