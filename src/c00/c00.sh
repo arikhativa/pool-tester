@@ -9,7 +9,7 @@ test_ex00()
 
 	gcc $CURRENT_DIR/src/c00/ex00/main.c $REPO_PATH/c00/ex00/ft_putchar.c
 
-	local VALID_RES="a"
+	local VALID_RES="!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~"
 
 	local USER_OUTPUT=$(./a.out)
 
