@@ -1,17 +1,17 @@
 #!/bin/sh
 
+print_start_project()
+{
+	project_name=$1
+
+	echo "\nTesting project $project_name\n"
+}
+
 print_compile_error()
 {
 	test_name=$1
 
-	echo "\nFailed to compile: $test_name"
-}
-
-print_start_test()
-{
-	test_name=$1
-
-	echo "Testing $test_name: \n\n"
+	echo "\n$test_name\t-\tFailed to compile\n" 
 }
 
 print_fail()
