@@ -4,7 +4,8 @@
 test_ex00()
 {
 	EX_NAME="ft_putchar"
-	printf "\nex00:\n\n"
+
+	print_start_test $EX_NAME
 
 	gcc $CURRENT_DIR/src/c00/ex00/main.c $REPO_PATH/c00/ex00/ft_putchar.c
 
@@ -17,7 +18,6 @@ test_ex00()
 	else
 		print_success $EX_NAME
 	fi
-
 }
 
 test_c00()
