@@ -8,7 +8,8 @@ compile_tests()
 	local err_msg=$(gcc -Wall -Werror -Wextra $MAIN $USR_SRC)
 	
 	if [ ! -e a.out ] ; then
-		echo "\nFailed to compile: $USR_SRC"
-		echo "error:\n\t$err_msg"
+		IS_COMPLIE=1
+	else
+		IS_COMPLIE=0
 	fi
 }

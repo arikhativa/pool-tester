@@ -1,5 +1,12 @@
 #!/bin/sh
 
+print_compile_error()
+{
+	test_name=$1
+
+	echo "\nFailed to compile: $test_name"
+}
+
 print_start_test()
 {
 	test_name=$1

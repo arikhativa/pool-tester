@@ -9,6 +9,11 @@ test_ex00()
 	print_start_test $EX_NAME
 
 	compile_tests $CURRENT_DIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
+	if [ $IS_COMPLIE -eq 1 ]; then
+		print_compile_error $EX_NAME
+
+		return
+	fi
 
 	# Test
 	local VALID_RES="!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~"

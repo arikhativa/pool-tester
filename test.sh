@@ -3,6 +3,7 @@
 CURRENT_DIR=$PWD
 USER_REPO_PATH=".."
 EXEC_FIEL="a.out"
+IS_COMPLIE=0
 
 source ./src/c00/c00.sh
 source ./src/util/clean_test.sh
