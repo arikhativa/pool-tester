@@ -3,7 +3,7 @@ void	ft_putchar(char c);
 
 int	main(void)
 {
-	char c = 'b';
+	char c = 'a';
 
 	ft_putchar(c);
 
