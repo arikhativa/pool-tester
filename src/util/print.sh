@@ -14,6 +14,13 @@ print_compile_error()
 	echo "\n$test_name\t-\tFailed to compile\n" 
 }
 
+print_norm_error()
+{
+	test_name=$1
+
+	echo "\n$test_name\t-\tNot following the norm\n" 
+}
+
 print_fail()
 {
 	test_name=$1
