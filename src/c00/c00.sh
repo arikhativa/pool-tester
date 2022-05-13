@@ -44,7 +44,7 @@ test_ex04()
 	# Setup
 	local EX_NAME="ft_is_negative"
 	local EX_PATH="c00/ex04"
-	local VALID_RES="s"
+	local VALID_RES="NPPPNNNPNP"
 
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
