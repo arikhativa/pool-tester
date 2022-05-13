@@ -39,6 +39,16 @@ test_ex03()
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
 
+test_ex04()
+{
+	# Setup
+	local EX_NAME="ft_is_negative"
+	local EX_PATH="c00/ex04"
+	local VALID_RES="s"
+
+	generc_test $EX_NAME $EX_PATH $VALID_RES 
+}
+
 test_c00()
 {
 	local PROJECT_NAME="c00"
@@ -49,6 +59,7 @@ test_c00()
 	test_ex01
 	test_ex02
 	test_ex03
+	test_ex04
 }
 
 generc_test()
