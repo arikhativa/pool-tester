@@ -24,14 +24,14 @@ print_norm_error()
 print_fail()
 {
 	test_name=$1
-	vaild_res=$2
-	user_res=$3
+	vaild_res_path=$2
+	user_res_path=$3
 	
 	echo "$test_name\t-\tFail\n\n"
 	echo "expected output:\n"
-	echo "\t'$vaild_res'\n"
+	echo "\t'$(cat $vaild_res_path)'\n"
 	echo "user  output:\n"
-	echo "\t'$user_res'\n"
+	echo "\t'$(cat $user_res_path)'\n"
 }
 
 print_success()

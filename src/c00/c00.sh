@@ -4,7 +4,6 @@ test_ex00()
 {
 	local EX_NAME="ft_putchar"
 	local EX_PATH="c00/ex00"
-	local VALID_RES="!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~"
 
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
@@ -14,7 +13,6 @@ test_ex01()
 	# Setup
 	local EX_NAME="ft_print_alphabet"
 	local EX_PATH="c00/ex01"
-	local VALID_RES="abcdefghijklmnopqrstuvwxyz"
 
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
@@ -24,7 +22,6 @@ test_ex02()
 	# Setup
 	local EX_NAME="ft_print_reverse_alphabet"
 	local EX_PATH="c00/ex02"
-	local VALID_RES="zyxwvutsrqponmlkjihgfedcba"
 
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
@@ -34,7 +31,6 @@ test_ex03()
 	# Setup
 	local EX_NAME="ft_print_numbers"
 	local EX_PATH="c00/ex03"
-	local VALID_RES="0123456789"
 
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
@@ -44,9 +40,17 @@ test_ex04()
 	# Setup
 	local EX_NAME="ft_is_negative"
 	local EX_PATH="c00/ex04"
-	local VALID_RES="NPPPNNNPNP"
 
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
+}
+
+test_ex05()
+{
+	# Setup
+	local EX_NAME="ft_print_comb"
+	local EX_PATH="c00/ex05"
+
+	generc_test $EX_NAME $EX_PATH 
 }
 
 test_c00()
@@ -60,6 +64,7 @@ test_c00()
 	test_ex02
 	test_ex03
 	test_ex04
+	test_ex05
 }
 
 generc_test()
@@ -68,6 +73,7 @@ generc_test()
 	local EX_NAME=$1
 	local EX_PATH=$2
 	local VALID_RES=$3
+	local CORRECT_RES=$CURRENT_DIR/resources/res/$EX_PATH
 
 	check_norm $USER_REPO_PATH/$EX_PATH
 	if [ $IS_NORME -eq 1 ]; then
@@ -84,10 +90,14 @@ generc_test()
 	fi
 
 	# Test
-	local USER_OUTPUT=$(./a.out)
+	./a.out > $USER_RES
 
-	if [ "$VALID_RES" != "$USER_OUTPUT" ]; then
-		print_fail $EX_NAME $VALID_RES $USER_OUTPUT
+	diff $USER_RES $CORRECT_RES > $IS_DIFF_FILE
+
+	IS_DIFF=$(cat ./is_diff)
+
+	if [[ "$IS_DIFF" != "" ]]; then
+		print_fail $EX_NAME $CORRECT_RES $USER_RES
 	else
 		print_success $EX_NAME
 	fi

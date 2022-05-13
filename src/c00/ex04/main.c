@@ -1,5 +1,4 @@
 
-#include <stddef.h>
 #include <stdio.h>
 
 void	ft_is_negative(int n);
