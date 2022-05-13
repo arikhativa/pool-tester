@@ -29,6 +29,16 @@ test_ex02()
 	generc_test $EX_NAME $EX_PATH $VALID_RES 
 }
 
+test_ex03()
+{
+	# Setup
+	local EX_NAME="ft_print_numbers"
+	local EX_PATH="c00/ex03"
+	local VALID_RES="0123456789"
+
+	generc_test $EX_NAME $EX_PATH $VALID_RES 
+}
+
 test_c00()
 {
 	local PROJECT_NAME="c00"
@@ -38,6 +48,7 @@ test_c00()
 	test_ex00
 	test_ex01
 	test_ex02
+	test_ex03
 }
 
 generc_test()
