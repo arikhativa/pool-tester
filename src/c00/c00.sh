@@ -53,6 +53,15 @@ test_ex05()
 	generc_test $EX_NAME $EX_PATH 
 }
 
+test_ex06()
+{
+	# Setup
+	local EX_NAME="ft_print_comb2"
+	local EX_PATH="c00/ex06"
+
+	generc_test $EX_NAME $EX_PATH 
+}
+
 test_c00()
 {
 	local PROJECT_NAME="c00"
@@ -65,6 +74,7 @@ test_c00()
 	test_ex03
 	test_ex04
 	test_ex05
+	test_ex06
 }
 
 generc_test()
