@@ -62,6 +62,15 @@ test_ex06()
 	generc_test $EX_NAME $EX_PATH 
 }
 
+test_ex07()
+{
+	# Setup
+	local EX_NAME="ft_putnbr"
+	local EX_PATH="c00/ex07"
+
+	generc_test $EX_NAME $EX_PATH 
+}
+
 test_c00()
 {
 	local PROJECT_NAME="c00"
@@ -75,6 +84,7 @@ test_c00()
 	test_ex04
 	test_ex05
 	test_ex06
+	test_ex07
 }
 
 generc_test()
@@ -87,7 +97,8 @@ generc_test()
 
 	check_norm $USER_REPO_PATH/$EX_PATH
 	if [ $IS_NORME -eq 1 ]; then
-		print_norm_error $EX_NAME
+		echo $USER_REPO_PATH/$EX_PATH
+		print_norm_error $EX_NAME 
 
 		return
 	fi
