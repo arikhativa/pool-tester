@@ -19,6 +19,6 @@ int	main(void)
 	write(1, " ", 1);
 	ft_putnbr(2147483647);
 	write(1, " ", 1);
-	ft_putnbr(-2147483647);
+	ft_putnbr(-2147483648);
 	return 0;
 }

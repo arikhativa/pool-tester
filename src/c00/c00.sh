@@ -91,25 +91,27 @@ test_ex08()
 
 test_c00()
 {
-	TESTS_NAMES=(ft_putchar ft_print_alphabet)
-	NUM_OF_FILES_PER_TEST=(1 1)
+	# TESTS_NAMES=(ft_putchar ft_print_alphabet)
+	# NUM_OF_FILES_PER_TEST=(1 1)
 
-	for i in "${TESTS_NAMES[@]}"
-	do
-    	echo $i
-	done
+	# for i in "${TESTS_NAMES[@]}"
+	# do
+    # 	echo $i
+	# 	generc_test $EX_NAME $EX_PATH $NUM_OF_FILE
+
+	# done
 
 	local PROJECT_NAME="c00"
 
 	print_start_project $PROJECT_NAME
 
-	# test_ex00
-	# test_ex01
-	# test_ex02
-	# test_ex03
-	# test_ex04
-	# test_ex05
-	# test_ex06
-	# test_ex07
-	# test_ex08
+	test_ex00
+	test_ex01
+	test_ex02
+	test_ex03
+	test_ex04
+	test_ex05
+	test_ex06
+	test_ex07
+	test_ex08
 }
