@@ -82,7 +82,7 @@ test_ex07()
 test_ex08()
 {
 	# Setup
-	local EX_NAME="ss"
+	local EX_NAME="ft_print_combn"
 	local EX_PATH="c00/ex08"
 	local NUM_OF_FILE=1
 
