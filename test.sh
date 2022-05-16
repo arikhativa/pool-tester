@@ -10,6 +10,7 @@ USER_RES=./user_res.txt
 IS_DIFF_FILE=./is_diff
 
 source ./src/c00/c00.sh
+source ./src/util/generc_test.sh
 source ./src/util/clean_test.sh
 source ./src/util/print.sh
 source ./src/util/compile.sh
