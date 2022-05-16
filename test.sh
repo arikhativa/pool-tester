@@ -10,6 +10,8 @@ USER_RES=./user_res.txt
 IS_DIFF_FILE=./is_diff
 
 source ./src/c00/c00.sh
+source ./src/c01/c01.sh
+
 source ./src/util/generc_test.sh
 source ./src/util/clean_test.sh
 source ./src/util/print.sh
@@ -17,4 +19,13 @@ source ./src/util/compile.sh
 source ./src/util/check_norm.sh
 source ./src/util/check_files.sh
 
-test_c00
+
+case $1 in
+	-c00)
+		test_c00 ;;
+	-c01)
+		test_c01 ;;
+	*)
+		test_c00
+		test_c01
+esac
