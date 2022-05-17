@@ -11,7 +11,7 @@ test_c00()
 	print_start_project $PROJECT_NAME
 
 	i=0
-	while [ $i -ne 9 ]
+	while [ $i -ne ${#TESTS_NAMES[@]} ]
 	do
 		generc_test ${TESTS_NAMES[i]} ${EXEC_PATHS[i]} ${NUM_OF_FILES_PER_TEST[i]}
 		i=$((i+1))
