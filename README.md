@@ -9,9 +9,12 @@ It will be updated every ~day.
 * clone this repo next to you C repo
 
 ```sh
-gti clone https://github.com/arikhativa/pool-tester.git
+git clone https://github.com/arikhativa/pool-tester.git
 ```
-
+The fs should look like this:
+/
+----/c00
+----/pool-tester
 * make sure the name of the C repo will be formatted like this - cXX
   * example - c00 / c01
 * You can change the name with the mv cmd
