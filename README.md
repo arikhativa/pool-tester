@@ -11,10 +11,10 @@ It will be updated every ~day.
 ```sh
 git clone https://github.com/arikhativa/pool-tester.git
 ```
-The fs should look like this:
-/
-----/c00
-----/pool-tester
+The fs should look like this:<br />
+/<br />
+----/c00<br />
+----/pool-tester<br />
 * make sure the name of the C repo will be formatted like this - cXX
   * example - c00 / c01
 * You can change the name with the mv cmd
