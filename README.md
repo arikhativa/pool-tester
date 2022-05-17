@@ -2,7 +2,7 @@
 # Madrid Pool Tester May
 
 ## About
-I am still working on this project.<br />
+I am still working on this project.
 It will be updated every ~day.
 
 ## How to use
@@ -11,10 +11,15 @@ It will be updated every ~day.
 ```sh
 git clone https://github.com/arikhativa/pool-tester.git
 ```
-The fs should look like this:<br />
-/<br />
-----/c00<br />
-----/pool-tester<br />
+The dir should look like this:
+
+```sh
+ls -l
+total 0
+drwxr-xr-x  2 xx  2019  68 May 17 13:11 c00
+drwxr-xr-x  2 xx  2019  68 May 17 13:12 pool-tester
+```
+
 * make sure the name of the C repo will be formatted like this - cXX
   * example - c00
 * You can change the name with the mv cmd
