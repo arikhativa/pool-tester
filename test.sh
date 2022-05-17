@@ -16,6 +16,7 @@ fi
 
 source $BASEDIR/src/c00/c00.sh
 source $BASEDIR/src/c01/c01.sh
+source $BASEDIR/src/c02/c02.sh
 
 source $BASEDIR/src/util/generc_test.sh
 source $BASEDIR/src/util/clean_test.sh
@@ -30,7 +31,10 @@ case $1 in
 		test_c00 ;;
 	-c01)
 		test_c01 ;;
+	-c02)
+		test_c02 ;;
 	*)
 		test_c00
 		test_c01
+		test_c02
 esac

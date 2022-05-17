@@ -1,7 +1,6 @@
 #!/bin/sh
 
-
-generc_test()
+generc_ex_test()
 {
 	# Setup
 	local EX_NAME=$1
@@ -47,4 +46,22 @@ generc_test()
 
 	# Clean
 	clean_test
+}
+
+generic_project_test()
+{
+	local PROJECT_NAME=$1
+	TESTS_NAMES=$2
+	NUM_OF_FILES_PER_TEST=$3
+
+	EXEC_PATHS=($PROJECT_NAME/ex00 $PROJECT_NAME/ex01 $PROJECT_NAME/ex02 $PROJECT_NAME/ex03 $PROJECT_NAME/ex04 $PROJECT_NAME/ex05 $PROJECT_NAME/ex06 $PROJECT_NAME/ex07 $PROJECT_NAME/ex08 $PROJECT_NAME/ex09 $PROJECT_NAME/ex10 $PROJECT_NAME/ex11)
+
+	print_start_project $PROJECT_NAME
+
+	i=0
+	while [ $i -ne ${#TESTS_NAMES[@]} ]
+	do
+		generc_ex_test ${TESTS_NAMES[i]} ${EXEC_PATHS[i]} ${NUM_OF_FILES_PER_TEST[i]}
+		i=$((i+1))
+	done
 }
