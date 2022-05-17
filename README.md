@@ -2,7 +2,7 @@
 # Madrid Pool Tester May
 
 ## About
-I am still working on this project.
+I am still working on this project.<br />
 It will be updated every ~day.
 
 ## How to use
@@ -16,7 +16,7 @@ The fs should look like this:<br />
 ----/c00<br />
 ----/pool-tester<br />
 * make sure the name of the C repo will be formatted like this - cXX
-  * example - c00 / c01
+  * example - c00
 * You can change the name with the mv cmd
 
 ```sh
