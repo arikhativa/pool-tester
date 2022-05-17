@@ -8,7 +8,7 @@ generc_test()
 	local EX_PATH=$2
 	local NUM_OF_FILES=$3
 
-	local CORRECT_RES=$CURRENT_DIR/resources/res/$EX_PATH
+	local CORRECT_RES=$BASEDIR/resources/res/$EX_PATH
 
 	check_files "$USER_REPO_PATH/$EX_PATH" $NUM_OF_FILES
 	if [ $IS_COUNT_FILES -eq 1 ]; then
@@ -25,7 +25,7 @@ generc_test()
 	fi
 	
 
-	compile_tests $CURRENT_DIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
+	compile_tests $BASEDIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
 	if [ $IS_COMPLIE -eq 1 ]; then
 		print_compile_error $EX_NAME
 

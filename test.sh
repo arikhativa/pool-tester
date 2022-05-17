@@ -1,7 +1,6 @@
 #!/bin/sh
 
-CURRENT_DIR=$PWD
-USER_REPO_PATH=".."
+USER_REPO_PATH=$2
 EXEC_FIEL="a.out"
 IS_COMPLIE=1
 IS_NORME=1
@@ -9,15 +8,21 @@ IS_COUNT_FILES=1
 USER_RES=./user_res.txt
 IS_DIFF_FILE=./is_diff
 
-source ./src/c00/c00.sh
-source ./src/c01/c01.sh
+BASEDIR=$(dirname "$0")
 
-source ./src/util/generc_test.sh
-source ./src/util/clean_test.sh
-source ./src/util/print.sh
-source ./src/util/compile.sh
-source ./src/util/check_norm.sh
-source ./src/util/check_files.sh
+if [ "$USER_REPO_PATH" == "" ] ; then
+	USER_REPO_PATH="$BASEDIR/../"
+fi
+
+source $BASEDIR/src/c00/c00.sh
+source $BASEDIR/src/c01/c01.sh
+
+source $BASEDIR/src/util/generc_test.sh
+source $BASEDIR/src/util/clean_test.sh
+source $BASEDIR/src/util/print.sh
+source $BASEDIR/src/util/compile.sh
+source $BASEDIR/src/util/check_norm.sh
+source $BASEDIR/src/util/check_files.sh
 
 
 case $1 in

@@ -5,6 +5,18 @@
 I am still working on this project.
 It will be updated every ~day.
 
+## Usage
+
+```sh
+./pool-tester/tesh.sh -<PROJECT_NAME> <PATH_TO_ALL_PROJECTS_DIR>
+
+~/pool-tester/test.sh -c01 /tmp
+
+ls -l /tmp
+drwxr-xr-x  12 xxxxx  wheel  384 May 17 13:59 c00
+drwxr-xr-x  12 xxxxx  wheel  384 May 17 13:59 c01
+```
+
 ## How to use
 * clone this repo next to you C repo
 
