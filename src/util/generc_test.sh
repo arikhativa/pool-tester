@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 generc_ex_test()
 {
@@ -17,7 +17,7 @@ generc_ex_test()
 	fi
 
 	check_norm $USER_REPO_PATH/$EX_PATH
-	if [ $IS_NORME -eq 1 ]; then
+	if [ $IS_NORM -eq 1 ]; then
 		print_norm_error $EX_NAME 
 
 		return

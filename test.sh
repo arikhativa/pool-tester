@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 USER_REPO_PATH=$2
 EXEC_FIEL="a.out"
 IS_COMPLIE=1
-IS_NORME=1
+IS_NORM=1
+IS_NORMINETTE=1
 IS_COUNT_FILES=1
 USER_RES=./user_res.txt
 IS_DIFF_FILE=./is_diff
@@ -25,6 +26,7 @@ source $BASEDIR/src/util/compile.sh
 source $BASEDIR/src/util/check_norm.sh
 source $BASEDIR/src/util/check_files.sh
 
+is_norminette_installed
 
 case $1 in
 	-c00)
