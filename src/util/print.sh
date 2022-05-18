@@ -52,3 +52,8 @@ print_norminette_not_installed()
 {
 	printf "Norminette Error:\n\tapp is not installed!\n\n"
 }
+
+print_valgrind_not_installed()
+{
+	printf "Valgrind Error:\n\tapp is not installed!\n\n"
+}

@@ -10,8 +10,8 @@ check_files()
 	local COUNT=$(ls -a $PATH_TO_DIR 2>/dev/null | wc -l)
 
 	if [ $COUNT -ne $FILES ] ; then
-		IS_COUNT_FILES=1
+		IS_COUNT_FILES=$ERROR
 	else
-		IS_COUNT_FILES=0
+		IS_COUNT_FILES=$SUCCESS
 	fi
 }

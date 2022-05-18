@@ -2,18 +2,18 @@
 
 is_norminette_installed()
 {
-	local OUT_PUT=$(command -v normin2ette)
+	local OUT_PUT=$(command -v norminette)
 
 	if [ "$OUT_PUT" == "" ] ; then
-		IS_NORMINETTE=0
+		IS_NORMINETTE=$ERROR
 		print_norminette_not_installed
 	fi
 }
 
 check_norm()
 {
-	if [ $IS_NORMINETTE -eq 0 ] ; then
-		IS_NORM=0
+	if [ $IS_NORMINETTE -eq $ERROR ] ; then
+		IS_NORM=$SUCCESS
 		return ;
 	fi
 
@@ -24,8 +24,8 @@ check_norm()
 	NORME_RES=$(echo $OUT_PUT | grep -e "Error" -e "Warning")
 
 	if [ "$NORME_RES" == "" ] ; then
-		IS_NORM=0
+		IS_NORM=$SUCCESS
 	else
-		IS_NORM=1
+		IS_NORM=$ERROR
 	fi
 }

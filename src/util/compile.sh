@@ -7,9 +7,9 @@ compile_tests()
 
 	local err_msg=$(gcc -Wall -Werror -Wextra $MAIN $USR_SRC)
 	
-	if [ ! -e a.out ] ; then
-		IS_COMPLIE=1
+	if [ ! -e $EXEC_FIEL ] ; then
+		IS_COMPLIE=$ERROR
 	else
-		IS_COMPLIE=0
+		IS_COMPLIE=$SUCCESS
 	fi
 }
