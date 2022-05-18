@@ -12,6 +12,7 @@ ERROR=0
 IS_COMPLIE=$ERROR
 IS_NORM=$ERROR
 IS_NORMINETTE=$ERROR
+IS_VALGRIND=$ERROR
 IS_VALGRIND_INSTALLED=$ERROR
 IS_COUNT_FILES=$ERROR
 
@@ -35,7 +36,7 @@ source $BASEDIR/src/util/check_norm.sh
 source $BASEDIR/src/util/check_files.sh
 
 is_norminette_installed
-# is_valgrind_installed
+is_valgrind_installed
 
 case $1 in
 	-c00)

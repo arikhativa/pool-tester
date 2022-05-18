@@ -32,12 +32,14 @@ generc_ex_test()
 	fi
 
 	# Test
-	# if [ $IS_VALGRIND_INSTALLED -eq $SUCCESS ]; then
-	# 	run_with_valgrind
-	# else
+	if [ $IS_VALGRIND_INSTALLED -eq $SUCCESS ]; then
+		run_with_valgrind
+		if [ $IS_VALGRIND -eq $ERROR ] ; then
+			print_valgrind_error $EX_NAME
+		fi
+	else
 		./$EXEC_FIEL > $USER_RES
-	# fi
-
+	fi
 
 	diff $USER_RES $CORRECT_RES > $IS_DIFF_FILE
 

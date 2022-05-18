@@ -21,6 +21,13 @@ print_norm_error()
 	printf "$test_name\t-\tNot following the norm\n" 
 }
 
+print_valgrind_error()
+{
+	test_name=$1
+
+	printf "$test_name\t-\tValgrind found a memory leak\n" 
+}
+
 print_file_error()
 {
 	test_name=$1
