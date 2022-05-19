@@ -4,8 +4,8 @@ NAME=pool-tester
 CLOUD_IMG=arikhativa/pool-tester:1.0.0
 WORKDIR=/home
 
-PROJECT?=-a
-PROJECT_PATH?=/home
+PROJ?=-a
+PROJ_PATH?=/home
 
 build:
 	docker build -t $(IMG) .
@@ -26,8 +26,8 @@ enter:
 	docker exec -it $(NAME) bash
 
 test:
-	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJECT) $(PROJECT_PATH)
+	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(PROJ_PATH)
 
 review:
-	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJECT) $(WORKDIR)/code_review
+	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(WORKDIR)/code_review
 
