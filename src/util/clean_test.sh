@@ -2,8 +2,8 @@
 
 clean_test()
 {
-	rm $EXEC_FIEL
-	rm $IS_DIFF_FILE
-	rm $USER_RES
-	rm $VALGRIND_OUTPUT
+	rm $EXEC_FIEL 2>/dev/null
+	rm $IS_DIFF_FILE 2>/dev/null
+	rm $USER_RES 2>/dev/null
+	rm $VALGRIND_OUTPUT 2>/dev/null
 }

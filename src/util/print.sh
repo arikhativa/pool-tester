@@ -4,7 +4,7 @@ print_start_project()
 {
 	project_name=$1
 
-	printf "Testing project $project_name\n"
+	printf "\n -- Testing project $project_name -- \n\n"
 }
 
 print_compile_error()
