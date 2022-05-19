@@ -5,7 +5,7 @@ int ft_str_is_alpha(char *str);
 
 int	main()
 {
-	char *s1 = "string";
+	char *s1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUIWXYZ";
 	char *s2 = "string2";
 	char *s3 = "";
 	char s4[] = {1, 92, 64, 30, '\0'};
