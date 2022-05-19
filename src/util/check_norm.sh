@@ -1,7 +1,22 @@
-#!/bin/sh
+#!/bin/bash
+
+is_norminette_installed()
+{
+	local OUT_PUT=$(command -v norminette)
+
+	if [ "$OUT_PUT" == "" ] ; then
+		IS_NORMINETTE=$ERROR
+		print_norminette_not_installed
+	fi
+}
 
 check_norm()
 {
+	if [ $IS_NORMINETTE -eq $ERROR ] ; then
+		IS_NORM=$SUCCESS
+		return ;
+	fi
+
 	local PATH_TO_DIR=$1
 
 	local OUT_PUT=$(norminette -R CheckForbiddenSourceHeader $PATH_TO_DIR/*)
@@ -9,8 +24,8 @@ check_norm()
 	NORME_RES=$(echo $OUT_PUT | grep -e "Error" -e "Warning")
 
 	if [ "$NORME_RES" == "" ] ; then
-		IS_NORME=0
+		IS_NORM=$SUCCESS
 	else
-		IS_NORME=1
+		IS_NORM=$ERROR
 	fi
 }

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 generc_ex_test()
 {
@@ -10,14 +10,14 @@ generc_ex_test()
 	local CORRECT_RES=$BASEDIR/resources/res/$EX_PATH
 
 	check_files "$USER_REPO_PATH/$EX_PATH" $NUM_OF_FILES
-	if [ $IS_COUNT_FILES -eq 1 ]; then
+	if [ $IS_COUNT_FILES -eq $ERROR ]; then
 		print_file_error $EX_NAME
 
 		return
 	fi
 
 	check_norm $USER_REPO_PATH/$EX_PATH
-	if [ $IS_NORME -eq 1 ]; then
+	if [ $IS_NORM -eq $ERROR ]; then
 		print_norm_error $EX_NAME 
 
 		return
@@ -25,14 +25,21 @@ generc_ex_test()
 	
 
 	compile_tests $BASEDIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
-	if [ $IS_COMPLIE -eq 1 ]; then
+	if [ $IS_COMPLIE -eq $ERROR ] ; then
 		print_compile_error $EX_NAME
 
 		return
 	fi
 
 	# Test
-	./a.out > $USER_RES
+	if [ $IS_VALGRIND_INSTALLED -eq $SUCCESS ]; then
+		run_with_valgrind
+		if [ $IS_VALGRIND -eq $ERROR ] ; then
+			print_valgrind_error $EX_NAME
+		fi
+	else
+		./$EXEC_FIEL > $USER_RES
+	fi
 
 	diff $USER_RES $CORRECT_RES > $IS_DIFF_FILE
 
