@@ -45,6 +45,10 @@ case $1 in
 		test_c01 ;;
 	c02)
 		test_c02 ;;
+	-a)
+		test_c00
+		test_c01
+		test_c02 ;;
 	*)
 		print_usage ;;
 esac

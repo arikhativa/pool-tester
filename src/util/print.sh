@@ -3,7 +3,7 @@
 print_usage()
 {
 	printf "pool-tester: illegal option\n"
-	printf "usage: make test PROJ=<PROJECT_NAME> PROJ_PATH=<PATH_TO_PROJECT>"
+	printf "usage: make test PROJ=<PROJECT_NAME>"
 }
 
 print_start_project()
