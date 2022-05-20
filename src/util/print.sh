@@ -49,9 +49,9 @@ print_fail()
 	
 	printf "$test_name\t-\tFail\n\n"
 	printf "expected output:\n"
-	echo "\t'$(cat $vaild_res_path)'\n"
+	printf "\t'$(cat $vaild_res_path)'\n"
 	printf "user  output:\n"
-	echo "\t'$(cat $user_res_path)'\n"
+	printf "\t'$(cat $user_res_path)'\n"
 }
 
 print_success()

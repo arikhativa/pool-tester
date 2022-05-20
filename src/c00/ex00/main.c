@@ -3,9 +3,11 @@ void	ft_putchar(char c);
 
 int	main(void)
 {
-	for (int i = 33; i < 127; i++) 
+	char *s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	while (*s) 
 	{
-		ft_putchar(i);
+		ft_putchar(*s);
+		++s;
 	}
 
 	return 0;
