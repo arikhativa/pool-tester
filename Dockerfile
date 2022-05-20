@@ -12,4 +12,4 @@ RUN python3 -m pip install --upgrade pip setuptools
 RUN python3 -m pip install norminette
 RUN mv norminette normi
 
-WORKDIR ~/home
+WORKDIR /home

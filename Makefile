@@ -1,7 +1,7 @@
 
-IMG=arikhativa/pool-tester:1.0.0
+IMG=arikhativa/pool-tester:1.0.1
 NAME=pool-tester
-CLOUD_IMG=arikhativa/pool-tester:1.0.0
+CLOUD_IMG=arikhativa/pool-tester:1.0.1
 WORKDIR=/home
 
 PROJ?=-a
