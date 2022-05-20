@@ -39,14 +39,12 @@ is_norminette_installed
 is_valgrind_installed
 
 case $1 in
-	-c00)
+	c00)
 		test_c00 ;;
-	-c01)
+	c01)
 		test_c01 ;;
-	-c02)
+	c02)
 		test_c02 ;;
-	-a)
-		test_c00
-		test_c01
-		test_c02
+	*)
+		print_usage ;;
 esac

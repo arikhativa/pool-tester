@@ -5,31 +5,11 @@
 I am still working on this project.
 It will be updated every ~day.
 
-## Usage
-
-```sh
-./pool-tester/tesh.sh -<PROJECT_NAME> <PATH_TO_ALL_PROJECTS_DIR>
-
-~/pool-tester/test.sh -c01 /tmp
-
-ls -l /tmp
-drwxr-xr-x  12 xxxxx  wheel  384 May 17 13:59 c00
-drwxr-xr-x  12 xxxxx  wheel  384 May 17 13:59 c01
-```
-
 ## How to use
-* clone this repo next to you C repo
-
+* clone this repo to your home dir
+  * your home dir is (echo $HOME)
 ```sh
 git clone https://github.com/arikhativa/pool-tester.git
-```
-The dir should look like this:
-
-```sh
-ls -l
-total 0
-drwxr-xr-x  2 xx  2019  68 May 17 13:11 c00
-drwxr-xr-x  2 xx  2019  68 May 17 13:12 pool-tester
 ```
 
 * make sure the name of the C repo will be formatted like this - cXX
@@ -40,12 +20,26 @@ drwxr-xr-x  2 xx  2019  68 May 17 13:12 pool-tester
 mv <PROJECT_NAME> c00
 ```
 
+The dir should look like this:
+
+```sh
+ls -l
+total 0
+drwxr-xr-x  2 xx  2019  68 May 17 13:11 c00
+drwxr-xr-x  2 xx  2019  68 May 17 13:12 pool-tester
+```
+* **Start your docker**
+  * on your Mac there should be a docker app
+  * go to applications and start it.
 * go into the pool-tester repo
-* and run the tester with the correct flag
 
 ```sh
 cd pool-tester
-./test.sh -c00
+make run
+make test PROJ=<PROJECT_NAME>
+
+e.g.
+make test PROJ=c00
 ```
 
 ## Contact

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+print_usage()
+{
+	printf "pool-tester: illegal option\n"
+	printf "usage: make test PROJ=<PROJECT_NAME> PROJ_PATH=<PATH_TO_PROJECT>"
+}
+
 print_start_project()
 {
 	project_name=$1
@@ -43,9 +49,9 @@ print_fail()
 	
 	printf "$test_name\t-\tFail\n\n"
 	printf "expected output:\n"
-	printf "\t'$(cat $vaild_res_path)'\n"
+	echo "\t'$(cat $vaild_res_path)'\n"
 	printf "user  output:\n"
-	printf "\t'$(cat $user_res_path)'\n"
+	echo "\t'$(cat $user_res_path)'\n"
 }
 
 print_success()
