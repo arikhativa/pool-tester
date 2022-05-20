@@ -20,9 +20,7 @@ int main()
 	int tab3[] = {1, 2, 3};
 	int tab4[] = {1, 2, 3, 4};
 	int tab5[] = {1, 2, 3, 4, 5};
-	int	*ptr = NULL;
-
-	ft_rev_int_tab(ptr, 5);
+	
 	ft_rev_int_tab(tab2, 0);
 
 	ft_rev_int_tab(tab1, 1);
