@@ -1,7 +1,8 @@
 
-IMG=arikhativa/pool-tester:1.0.1
+# bad img - no norm
+IMG=arikhativa/pool-tester:0.0.3
 NAME=pool-tester
-CLOUD_IMG=arikhativa/pool-tester:1.0.1
+CLOUD_IMG=arikhativa/pool-tester:0.0.3
 WORKDIR=/home
 
 build:
