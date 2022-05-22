@@ -5,13 +5,13 @@ generc_ex_test()
 	# Setup
 	local EX_NAME=$1
 	local EX_PATH=$2
-	local NUM_OF_FILES=$3
+	local EXPECT_NUM_FILES=$3
 
 	local CORRECT_RES=$BASEDIR/resources/res/$EX_PATH
 
-	check_files "$USER_REPO_PATH/$EX_PATH" $NUM_OF_FILES
-	if [ $IS_COUNT_FILES -eq $ERROR ]; then
-		print_file_error $EX_NAME
+	check_files "$USER_REPO_PATH/$EX_PATH" $EXPECT_NUM_FILES
+	if [ $FILES_IN_DIR -ne $EXPECT_NUM_FILES ]; then
+		print_file_error $EX_NAME $EXPECT_NUM_FILES $FILES_IN_DIR
 
 		return
 	fi
@@ -22,7 +22,6 @@ generc_ex_test()
 
 		return
 	fi
-	
 
 	compile_tests $BASEDIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
 	if [ $IS_COMPLIE -eq $ERROR ] ; then

@@ -7,9 +7,6 @@ int main()
 {
 	int a = 123;
 	int b = 10;
-	int z = 0;
-
-	ft_ultimate_div_mod(&a, &z);
 
 	ft_ultimate_div_mod(&a, &b);
 

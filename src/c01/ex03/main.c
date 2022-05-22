@@ -10,8 +10,6 @@ int main()
 	int div = 42;
 	int mod = 2;
 
-	ft_div_mod(a, 0, &div, &mod);
-	
 	ft_div_mod(a, b, &div, &mod);
 
 	printf("%d %d", div, mod);

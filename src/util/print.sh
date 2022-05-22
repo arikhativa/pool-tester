@@ -36,9 +36,11 @@ print_valgrind_error()
 
 print_file_error()
 {
-	test_name=$1
+	local test_name=$1
+	local expect=$2
+	local found=$3
 
-	printf "$test_name\t-\tToo many / missing files in dir\n" 
+	printf "$test_name\t-\tExpected to find $expect files, found $found\n" 
 }
 
 print_fail()
