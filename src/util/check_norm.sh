@@ -4,6 +4,7 @@ is_norminette_installed()
 {
 	local OUT_PUT=$(command -v norminette)
 
+	IS_NORMINETTE=$SUCCESS
 	if [ "$OUT_PUT" == "" ] ; then
 		IS_NORMINETTE=$ERROR
 		print_norminette_not_installed
