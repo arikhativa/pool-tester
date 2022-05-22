@@ -24,8 +24,10 @@ enter:
 	docker exec -it $(NAME) bash
 
 test:
+	./test.sh $(PROJ) ~/
+
+valgrind:
 	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(WORKDIR)
 
 review:
 	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(WORKDIR)/code_review
-
