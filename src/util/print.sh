@@ -43,6 +43,20 @@ print_file_error()
 	printf "$test_name\t-\tExpected to find $expect files, found $found\n" 
 }
 
+print_no_exec()
+{
+	local test_name=$1
+
+	printf "$test_name\t-\tEmpty dir\n" 
+}
+
+print_no_dir()
+{
+	local test_name=$1
+
+	printf "Can't find $test_name\n" 
+}
+
 print_fail()
 {
 	test_name=$1
@@ -60,7 +74,7 @@ print_success()
 {
 	test_name=$1
 
-	printf "$test_name\t-\t Success!\n" 
+	printf "$test_name\t-\tSuccess!\n" 
 }
 
 print_norminette_not_installed()

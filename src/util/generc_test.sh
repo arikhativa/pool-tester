@@ -10,6 +10,17 @@ generc_ex_test()
 	local CORRECT_RES=$BASEDIR/resources/res/$EX_PATH
 
 	check_files "$USER_REPO_PATH/$EX_PATH" $EXPECT_NUM_FILES
+
+	if [ $FILES_IN_DIR -eq -2 ]; then
+		print_no_dir $EX_PATH
+
+		return
+	fi
+	if [ $FILES_IN_DIR -eq 0 ]; then
+		print_no_exec $EX_NAME
+
+		return
+	fi
 	if [ $FILES_IN_DIR -ne $EXPECT_NUM_FILES ]; then
 		print_file_error $EX_NAME $EXPECT_NUM_FILES $FILES_IN_DIR
 
