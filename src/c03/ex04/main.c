@@ -15,7 +15,7 @@ int	main()
 	if (!is_same)
 		printf("User didn't return haystack\n");
 	ret = ft_strstr(haystack, "NO");
-	printf("%p\n", ret);
+	printf("%lu\n", (unsigned long)ret);
 	ret = ft_strstr(haystack, needle);
 	printf("%s\n", ret);
 
