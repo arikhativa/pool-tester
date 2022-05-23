@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 
-char *ft_strcat(char *dest, char *src);
+char *ft_strncat(char *dest, char *src, unsigned int nb);
 
 int	simple_ret(int	ret)
 {
@@ -15,11 +15,11 @@ int	simple_ret(int	ret)
 int	main()
 {
 	char s[] = "123";
-	char d[7] = "abc";
+	char d[6] = "abc";
 	char *ret;
 	int is_same = 1;
 
-	ret = ft_strcat(d, s);
+	ret = ft_strncat(d, s, 2);
 	printf("%s\n", ret);
 	is_same = (unsigned long)(ret) == (unsigned long)(d);
 	if (!is_same)
