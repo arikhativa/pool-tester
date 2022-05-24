@@ -30,4 +30,7 @@ valgrind:
 	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(WORKDIR)
 
 review:
+	./test.sh $(PROJ) ~/code_review
+
+review/valgrind:
 	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(WORKDIR)/code_review

@@ -19,5 +19,8 @@ int	main()
 	ret = ft_strstr(haystack, needle);
 	printf("%s\n", ret);
 
+	ret = ft_strstr("", "");
+	printf("%s\n", ret);
+
 	return (0);
 }
