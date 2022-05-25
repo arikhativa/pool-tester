@@ -18,5 +18,5 @@ int	main(void)
 	printf("%d ", ft_sqrt(25));
 	printf("%d ", ft_sqrt(36));
 	printf("%d ", ft_sqrt(49));
-	printf("%d ", ft_sqrt(160000));
+	printf("%d ", ft_sqrt(2086479684));
 }
