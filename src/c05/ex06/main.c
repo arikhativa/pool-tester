@@ -5,6 +5,10 @@ int ft_is_prime(int nb);
 
 int	main(void)
 {
+	printf("%d ", ft_is_prime(254));
+	printf("%d ", ft_is_prime(255));
+	printf("%d ", ft_is_prime(270));
+	printf("%d ", ft_is_prime(713));
 	printf("%d ", ft_is_prime(0));
 	printf("%d ", ft_is_prime(1));
 	printf("%d ", ft_is_prime(2));
