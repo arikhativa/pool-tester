@@ -32,6 +32,7 @@ source $BASEDIR/src/c03/c03.sh
 source $BASEDIR/src/c04/c04.sh
 source $BASEDIR/src/c05/c05.sh
 source $BASEDIR/src/c06/c06.sh
+source $BASEDIR/src/c07/c07.sh
 
 source $BASEDIR/src/util/check_valgrind.sh
 source $BASEDIR/src/util/generc_test.sh
@@ -59,6 +60,8 @@ case $1 in
 		test_c05 ;;
 	c06)
 		test_c06 ;;
+	c07)
+		test_c07 ;;
 	*)
 		print_usage ;;
 esac
