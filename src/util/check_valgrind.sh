@@ -2,7 +2,9 @@
 
 run_with_valgrind()
 {
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=$VALGRIND_OUTPUT ./$EXEC_FIEL > $USER_RES
+	local EXEC=$1
+
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=$VALGRIND_OUTPUT ./$EXEC > $USER_RES
 
 	local TT=$(grep "ERROR SUMMARY:" $VALGRIND_OUTPUT | awk '{print $4}')
 

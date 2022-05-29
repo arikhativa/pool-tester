@@ -1,9 +1,10 @@
 
-# bad img - no norm
-IMG=arikhativa/pool-tester:0.0.3
+IMG=arikhativa/pool-tester:1.0.1
 NAME=pool-tester
-CLOUD_IMG=arikhativa/pool-tester:0.0.3
+CLOUD_IMG=arikhativa/pool-tester:1.0.1
 WORKDIR=/home
+
+.PHONY: build push run stop enter test valgrind review review/valgrind
 
 build:
 	docker build -t $(IMG) .
@@ -24,7 +25,7 @@ enter:
 	docker exec -it $(NAME) bash
 
 test:
-	./test.sh $(PROJ) ~/
+	./test.sh $(PROJ) ~
 
 valgrind:
 	docker exec -it $(NAME) $(WORKDIR)/pool-tester/test.sh $(PROJ) $(WORKDIR)

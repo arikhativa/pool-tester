@@ -13,3 +13,15 @@ compile_tests()
 		IS_COMPLIE=$SUCCESS
 	fi
 }
+
+compile_tests_c06()
+{
+	local USR_SRC=$1
+
+	local err_msg=$(gcc -Wall -Werror -Wextra $USR_SRC -o $UNIQUE_EXEC)
+	if [ ! -e $UNIQUE_EXEC ] ; then
+		IS_COMPLIE=$ERROR
+	else
+		IS_COMPLIE=$SUCCESS
+	fi
+}
