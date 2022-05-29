@@ -19,6 +19,14 @@ int	main(void)
 {
 	int *ret;
 
+	ret = ft_range(3, 3);
+	if (ret)
+		printf("User didn't return NULL\n");
+
+	ret = ft_range(3, 0);
+	if (ret)
+		printf("User didn't return NULL\n");
+
 	ret = ft_range(0, 3);
 	print_arr(ret, 3);
 	free(ret);
