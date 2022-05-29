@@ -6,7 +6,7 @@ c06_ex_test()
 	local EX_NAME=$1
 	local EX_PATH=$2
 	local EXPECT_NUM_FILES=$3
-	local COMPILE=$4
+	local RUN_CMD=$4
 
 	local CORRECT_RES=$BASEDIR/resources/res/$EX_PATH
 
@@ -43,14 +43,7 @@ c06_ex_test()
 	fi
 
 	# Test
-	if [ $IS_VALGRIND_INSTALLED -eq $SUCCESS ]; then
-		run_with_valgrind $UNIQUE_EXEC
-		if [ $IS_VALGRIND -eq $ERROR ] ; then
-			print_valgrind_error $EX_NAME
-		fi
-	else
-		./$UNIQUE_EXEC > $USER_RES
-	fi
+	$RUN_CMD
 
 	diff $USER_RES $CORRECT_RES > $IS_DIFF_FILE
 
@@ -71,8 +64,8 @@ c06_project_test()
 	local PROJECT_NAME=$1
 	TESTS_NAMES=$2
 	NUM_OF_FILES_PER_TEST=$3
+	RUN_CMD=$4
 
-	COMPILE=(a )
 	EXEC_PATHS=($PROJECT_NAME/ex00 $PROJECT_NAME/ex01 $PROJECT_NAME/ex02 $PROJECT_NAME/ex03 $PROJECT_NAME/ex04 $PROJECT_NAME/ex05 $PROJECT_NAME/ex06 $PROJECT_NAME/ex07 $PROJECT_NAME/ex08 $PROJECT_NAME/ex09 $PROJECT_NAME/ex10 $PROJECT_NAME/ex11 $PROJECT_NAME/ex12)
 
 	print_start_project $PROJECT_NAME
@@ -80,17 +73,38 @@ c06_project_test()
 	i=0
 	while [ $i -ne ${#TESTS_NAMES[@]} ]
 	do
-		c06_ex_test ${TESTS_NAMES[i]} ${EXEC_PATHS[i]} ${NUM_OF_FILES_PER_TEST[i]} ${COMPILE[i]}
+		c06_ex_test ${TESTS_NAMES[i]} ${EXEC_PATHS[i]} ${NUM_OF_FILES_PER_TEST[i]} ${RUN_CMD[i]}
 		i=$((i+1))
 	done
 }
 
+run_c06_ex00()
+{
+	./$UNIQUE_EXEC > $USER_RES
+}
+
+run_c06_ex01()
+{
+	./$UNIQUE_EXEC a b c > $USER_RES
+}
+
+run_c06_ex02()
+{
+	./$UNIQUE_EXEC a b c > $USER_RES
+}
+
+run_c06_ex03()
+{
+	./$UNIQUE_EXEC "  555   " abc XX a 0 TT 09 > $USER_RES
+}
+
 test_c06()
 {
-	local TESTS_NAMES=(ft_print_program_name)
-	local NUM_OF_FILES_PER_TEST=(1 1 1 )
+	local TESTS_NAMES=(ft_print_program_name ft_print_params ft_rev_params ft_sort_params)
+	local NUM_OF_FILES_PER_TEST=(1 1 1 1)
+	local RUN_CMD=(run_c06_ex00 run_c06_ex01 run_c06_ex02 run_c06_ex03)
 
-	c06_project_test "c06" $TESTS_NAMES $NUM_OF_FILES_PER_TEST
+	c06_project_test "c06" $TESTS_NAMES $NUM_OF_FILES_PER_TEST $RUN_CMD
 }
 
 
