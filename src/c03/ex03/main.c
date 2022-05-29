@@ -16,9 +16,13 @@ int	main()
 {
 	char s[] = "123";
 	char d[6] = "abc";
+	char s1[] = "";
+	char d1[] = "";
 	char *ret;
 	int is_same = 1;
 
+	ret = ft_strncat(d1, s1, 0);
+	printf("%s", ret);
 	ret = ft_strncat(d, s, 2);
 	printf("%s\n", ret);
 	is_same = (unsigned long)(ret) == (unsigned long)(d);
