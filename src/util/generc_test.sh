@@ -34,7 +34,7 @@ generc_ex_test()
 		return
 	fi
 
-	compile_tests $BASEDIR/src/$EX_PATH/main.c $USER_REPO_PATH/$EX_PATH/$EX_NAME.c
+	compile_tests $BASEDIR/src/$EX_PATH/main.c "$USER_REPO_PATH/$EX_PATH/*.c"
 	if [ $IS_COMPLIE -eq $ERROR ] ; then
 		print_compile_error $EX_NAME
 
