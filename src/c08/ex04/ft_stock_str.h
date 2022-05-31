@@ -2,10 +2,11 @@
 #ifndef FT_STOCK_STR_H
 # define FT_STOCK_STR_H
 
-void set_point(t_point *point)
+typedef struct s_stock_str
 {
-	point->x = 42;
-	point->y = 21;
-}
+	int		size;
+	char	*str;
+	char	*copy;
+}	t_stock_str;
 
 #endif
