@@ -64,10 +64,10 @@ print_fail()
 	user_res_path=$3
 	
 	printf "$test_name\t-\tFail\n\n"
-	printf "expected output:\n"
-	printf "\t'$(cat $vaild_res_path)'\n"
-	printf "user  output:\n"
-	printf "\t'$(cat $user_res_path)'\n"
+	printf "Expected output:\n"
+	printf "%s$(cat $vaild_res_path)\n\n"
+	printf "User  output:\n"
+	printf "%s$(cat $user_res_path)\n"
 }
 
 print_success()

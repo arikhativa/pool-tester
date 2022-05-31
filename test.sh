@@ -62,6 +62,15 @@ case $1 in
 		test_c06 ;;
 	c07)
 		test_c07 ;;
+	-a)
+		test_c00
+		test_c01
+		test_c02
+		test_c03
+		test_c04
+		test_c05
+		test_c06
+		test_c07 ;;
 	*)
 		print_usage ;;
 esac
