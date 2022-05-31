@@ -4,8 +4,24 @@ compile_tests()
 {
 	local MAIN=$1
 	local USR_SRC=$2
+	
 
-	local err_msg=$(gcc -Wall -Werror -Wextra $MAIN $USR_SRC)
+	local err_msg=$(gcc -Wall -Werror -Wextra $MAIN/*.c $USR_SRC/*.c)
+	
+	if [ ! -e $EXEC_FIEL ] ; then
+		IS_COMPLIE=$ERROR
+	else
+		IS_COMPLIE=$SUCCESS
+	fi
+}
+
+compile_tests_c08()
+{
+	local MAIN=$1
+	local USR_SRC=$2
+	C_INCLUDE_PATH=$USR_SRC
+
+	local err_msg=$(gcc -Wall -Werror -Wextra -I $USR_SRC $MAIN/*.c)
 	
 	if [ ! -e $EXEC_FIEL ] ; then
 		IS_COMPLIE=$ERROR
