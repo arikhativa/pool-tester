@@ -7,6 +7,7 @@ generc_ex_test()
 	local EX_PATH=$2
 	local EXPECT_NUM_FILES=$3
 	local COMPILE_FUNC=$4
+	local NORM_FUNC=$5
 
 	local CORRECT_RES=$BASEDIR/resources/res/$EX_PATH
 
@@ -28,7 +29,11 @@ generc_ex_test()
 		return
 	fi
 
-	check_norm $USER_REPO_PATH/$EX_PATH
+	if [ -z "$NORM_FUNC" ] ; then
+		# the generic compile func
+		NORM_FUNC=check_norm
+	fi
+	$NORM_FUNC $USER_REPO_PATH/$EX_PATH
 	if [ $IS_NORM -eq $ERROR ]; then
 		print_norm_error $EX_NAME 
 
@@ -77,6 +82,7 @@ generic_project_test()
 	TESTS_NAMES=$2
 	NUM_OF_FILES_PER_TEST=$3
 	local COMPILE_FUNC=$4
+	local NORM_FUNC=$5
 
 	EXEC_PATHS=($PROJECT_NAME/ex00 $PROJECT_NAME/ex01 $PROJECT_NAME/ex02 $PROJECT_NAME/ex03 $PROJECT_NAME/ex04 $PROJECT_NAME/ex05 $PROJECT_NAME/ex06 $PROJECT_NAME/ex07 $PROJECT_NAME/ex08 $PROJECT_NAME/ex09 $PROJECT_NAME/ex10 $PROJECT_NAME/ex11 $PROJECT_NAME/ex12)
 
@@ -85,7 +91,7 @@ generic_project_test()
 	i=0
 	while [ $i -ne ${#TESTS_NAMES[@]} ]
 	do
-		generc_ex_test ${TESTS_NAMES[i]} ${EXEC_PATHS[i]} ${NUM_OF_FILES_PER_TEST[i]} $COMPILE_FUNC
+		generc_ex_test ${TESTS_NAMES[i]} ${EXEC_PATHS[i]} ${NUM_OF_FILES_PER_TEST[i]} $COMPILE_FUNC $NORM_FUNC
 		i=$((i+1))
 	done
 }
