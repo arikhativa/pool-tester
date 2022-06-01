@@ -15,14 +15,52 @@ int	main(void)
 	char *ret;
 
 	// Bad param:
+	ret = ft_convert_base("", bin, bin);
+	if (ret != NULL)
+		printf("Expected NULL - nbr empty - ret: %s\n", ret);
+
+	ret = ft_convert_base("a", "a", bin);
+	if (ret != NULL)
+		printf("Expected NULL - base 1 - ret: %s\n", ret);
+
+	ret = ft_convert_base("   -+ 10", dec, bin);
+	if (ret != NULL)
+		printf("Expected NULL - nbr has space after signs - ret: %s\n", ret);
+
+	ret = ft_convert_base("-2147483649", dec, "01");
+	if (ret != NULL)
+		printf("Expected NULL - nbr is not int - ret: %s\n", ret);
+	
+	ret = ft_convert_base("a", "12", "");
+	if (ret != NULL)
+		printf("Expected NULL - empty base_to - ret: %s\n", ret);
+
+	ret = ft_convert_base("a", "", bin);
+	if (ret != NULL)
+		printf("Expected NULL - empty base_from - ret: %s\n", ret);
+
 	ret = ft_convert_base("a", "aa", bin);
 	if (ret != NULL)
-		printf("User didn;t return NULL\n");
+		printf("Expected NULL - base has 'a' twice - ret: %s\n", ret);
+
 	ret = ft_convert_base("a", "-a", bin);
 	if (ret != NULL)
-		printf("User didn;t return NULL\n");
-	
-	ret = ft_convert_base("  + a", hex, bin);
+		printf("Expected NULL - base has '-' - ret: %s\n", ret);
+
+	ret = ft_convert_base("a", "+a", bin);
+	if (ret != NULL)
+		printf("Expected NULL - base has '+' - ret: %s\n", ret);
+
+	ret = ft_convert_base("12", "01 2", bin);
+	if (ret != NULL)
+		printf("Expected NULL - base has ' ' (space..) - ret: %s\n", ret);
+
+	char unprint_base[] = {3, 0};
+	ret = ft_convert_base("12", unprint_base, bin);
+	if (ret != NULL)
+		printf("Expected NULL - base is unprintable - ret: %s\n", ret);
+
+	ret = ft_convert_base("  ", hex, bin);
 	printf("%s\n", ret);
 	free(ret);
 
@@ -43,6 +81,10 @@ int	main(void)
 	free(ret);
 
 	ret = ft_convert_base("-2147483648", dec, dec);
+	printf("%s\n", ret);
+	free(ret);
+
+	ret = ft_convert_base("003", dec, dec);
 	printf("%s\n", ret);
 	free(ret);
 }
