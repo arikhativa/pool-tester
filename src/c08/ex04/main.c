@@ -47,7 +47,7 @@ void	ft_putnbr(int nb)
 
 void	ft_show_tab(struct s_stock_str *par)
 {
-	while (par->copy != NULL)
+	while (par->str != NULL)
 	{
 		ft_putstr(par->str);
 		ft_putchar('\n');

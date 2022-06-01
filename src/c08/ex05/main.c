@@ -5,7 +5,7 @@
 
 #include "ft_stock_str.h"
 
-ft_show_tab(struct s_stock_str *par);
+void ft_show_tab(struct s_stock_str *par);
 
 #define ERROR	-1
 #define SUCCESS	0
@@ -89,7 +89,7 @@ int main(void)
 	(ret + 1)->copy[0] = 'n';
 
 	ft_show_tab(ret);
-	free_arr(ret, 3);
+	free_all(ret, 3);
 
 	return (0);
 }
