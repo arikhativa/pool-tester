@@ -22,7 +22,7 @@ compile_tests_c08()
 	C_INCLUDE_PATH=$C_INCLUDE_PATH:$USR_SRC:$MAIN
 	CPATH=$CPATH:$USR_SRC:$MAIN
 
-	if [[ "$USR_SRC" == *"ex04"* ]] ; then
+	if [[ "$USR_SRC" == *"ex04"* || "$USR_SRC" == *"ex05"* ]] ; then
 		local err_msg=$(gcc -Wall -Werror -Wextra -I $MAIN $USR_SRC/*.c $MAIN/*.c)
 	else
 		local err_msg=$(gcc -Wall -Werror -Wextra -I $USR_SRC $MAIN/*.c)

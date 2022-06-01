@@ -59,7 +59,6 @@ void	ft_show_tab(struct s_stock_str *par)
 	}
 }
 
-
 void	free_arr(struct s_stock_str *arr, int size)
 {
 	int	i;
@@ -73,20 +72,17 @@ void	free_arr(struct s_stock_str *arr, int size)
 	free(arr);
 }
 
-
 int main(void)
 {
 	struct s_stock_str *ret;
-	// char *s1 = "123";
-	char *strs[] = {"123", "eee"};
-	// strs = &s1;
+	char *strs[] = {"123", "eee", ""};
 
-	ret = ft_strs_to_tab(2, strs);
+	ret = ft_strs_to_tab(3, strs);
 	ret->copy[0] = 'a';
 	(ret + 1)->copy[0] = 'n';
 
 	ft_show_tab(ret);
-	free_arr(ret, 2);
+	free_arr(ret, 3);
 
 	return (0);
 }
