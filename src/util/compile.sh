@@ -19,12 +19,13 @@ compile_tests_c08()
 {
 	local MAIN=$1
 	local USR_SRC=$2
-	C_INCLUDE_PATH=$USR_SRC:$MAIN
+	C_INCLUDE_PATH=$C_INCLUDE_PATH:$USR_SRC:$MAIN
+	CPATH=$CPATH:$USR_SRC:$MAIN
 
-	if [ "$USR_SRC" == "/Users/yrabby/c08/ex04" ] ; then
-		local err_msg=$(gcc -Wall -Werror -Wextra $USR_SRC/*.c $MAIN/*.c)
+	if [[ "$USR_SRC" == *"ex04"* ]] ; then
+		local err_msg=$(gcc -Wall -Werror -Wextra -I $MAIN $USR_SRC/*.c $MAIN/*.c)
 	else
-		local err_msg=$(gcc -Wall -Werror -Wextra $MAIN/*.c)
+		local err_msg=$(gcc -Wall -Werror -Wextra -I $USR_SRC $MAIN/*.c)
 	fi
 	
 	if [ ! -e $EXEC_FIEL ] ; then

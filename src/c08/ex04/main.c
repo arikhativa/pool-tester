@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include "ft_stock_str.h"
 
@@ -58,14 +59,34 @@ void	ft_show_tab(struct s_stock_str *par)
 	}
 }
 
+
+void	free_arr(struct s_stock_str *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(arr[i].copy);
+		++i;
+	}
+	free(arr);
+}
+
+
 int main(void)
 {
 	struct s_stock_str *ret;
-	char *s1[] = {"123"};
+	// char *s1 = "123";
+	char *strs[] = {"123", "eee"};
+	// strs = &s1;
 
-	ret = ft_strs_to_tab(1, s1);
+	ret = ft_strs_to_tab(2, strs);
 	ret->copy[0] = 'a';
+	(ret + 1)->copy[0] = 'n';
+
 	ft_show_tab(ret);
+	free_arr(ret, 2);
 
 	return (0);
 }
